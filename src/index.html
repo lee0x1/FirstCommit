@@ -13,14 +13,21 @@
     <title>First Commit</title>
   </head>
   <body>
-    <header>
-      <img id="logo" style="width: 50px" src="./img/logo.png" alt="" />
-      <h1 id="title">First Commit Finder</h1>
-      <form>
-        <input id="ghusername" type="search" placeholder="@username" />
-        <input type="submit" />
-      </form>
-    </header>
-    <main id="content"></main>
+    <div id="app-wrapper">
+      <header id="header-wrapper">
+        <section id="brand">
+          <img id="logo" style="width: 50px; height: 50px;" src="./img/logo.png" alt="" />
+          <h1 id="title">First Commit</h1>
+        </section>
+        <section id="search">
+          <form>
+            <input id="ghusername" type="search" placeholder="@username" />
+            <input type="submit" />
+          </form>
+        </section>
+      </header>
+      <main id="content"></main>
+    </div>
+    
   </body>
 </html>

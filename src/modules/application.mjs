@@ -18,7 +18,7 @@ class Application {
             const username = this.utilityService.constructUrl(input);
             const data = await this.dataService.getData(fetch, username);
             this.displayService.renderData(data);
-            console.log(data);
+            console.info(data.items[0]);
 
         });
     }
