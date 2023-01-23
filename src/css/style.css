@@ -1,31 +1,106 @@
 /* style.css */
 
-header h1 {
-    font-family: monospace;
+.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 480px;
+  min-width: 320px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-#app-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 20px;
-    text-align: center;
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-header section {
-    display: flex;
-    align-items: center;
+.brand-container {
+  align-items: center;
+  display: flex;
+  flex: 0 0 75%; /* use 75% of first row */
+  justify-content: flex-start;
 }
 
-section#search {
-    justify-content: center;
+.brand-container h1 {
+  padding-left: 10px;
+  font-family: monospace;
 }
 
-section#brand {
-    justify-content: space-between;
+.dropdown-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-main {
-    margin-top: 20px;
-    font-family: 'Courier New', Courier, monospace;
+.search-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/*  */
+/* Dropdown experiment */
+/*  */
+a {
+  text-decoration: none;
+}
+
+ul {
+  background: #fff;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+li {
+  color: #333;
+  /* background: darkorange; */
+  display: block;
+  padding: 1rem;
+  position: relative;
+  text-decoration: none;
+  transition-duration: 0.5s;
+}
+
+li a {
+  color: #333;
+  /* background-color: #fff; */
+}
+
+li:hover,
+li:focus-within {
+  /* background: #333; */
+  color: #fff;
+  cursor: pointer;
+}
+
+li:focus-within a {
+  outline: none;
+}
+
+ul li ul {
+  /* background: orange; */
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  min-width: 5rem;
+  position: absolute;
+  transition: all 0.5s ease;
+  margin-top: 1rem;
+  right: 0;
+  display: none;
+}
+
+ul li:hover > ul,
+ul li:focus-within > ul,
+ul li ul:hover,
+ul li ul:focus {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+ul li ul li {
+  clear: both;
 }
