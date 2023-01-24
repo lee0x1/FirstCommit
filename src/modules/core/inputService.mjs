@@ -2,9 +2,9 @@
 
 const getInput = (callback) => {
     let username;
-    const searchForm = document.querySelector("form");
-
-    searchForm.addEventListener("submit", (event) => {
+    const searchBtn = document.querySelector(".btn");
+    // TODO: Enter key fire click event
+    searchBtn.addEventListener("click", (event) => {
       event.preventDefault();
       const nameInput = document.querySelector("input");
       username = nameInput.value;
