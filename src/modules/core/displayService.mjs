@@ -4,7 +4,7 @@ const renderData = (data) => {
     const content = document.getElementById("content");
     
     // TODO:  destructure values 
-    const {  name , userHandle, commitMsg, date, repo } = extractUsefulData(data);
+    const {  avatar, name , userHandle, commitMsg, date, repo } = extractUsefulData(data);
     
     // date format: MM/DD/YYYY
     const prettyDate = convertDate(date);
@@ -13,7 +13,8 @@ const renderData = (data) => {
     const msg = commitMsg.split('\n')[0];
     
     // experiment getting data to screen
-    content.innerText = name + "\n" +
+    content.innerText = avatar + "\n" +
+        name + "\n" +
         userHandle + "\n" +
         msg + "\n" +
         prettyDate + "\n" +
@@ -29,6 +30,7 @@ const convertDate = (utcDate) => {
 
 const extractUsefulData = (data) => {
     // TODO: fix .commit is undefined when its a orginization repo
+    const avatar = data.items[0].author.avatar_url;
     const name = data.items[0].commit.author.name;
     const userHandle = data.items[0].author.login;
     const commitMsg = data.items[0].commit.message;
@@ -36,6 +38,7 @@ const extractUsefulData = (data) => {
     const repo = data.items[0].repository.name;
     
     return {
+        avatar,
         name,
         userHandle,
         commitMsg,
