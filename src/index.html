@@ -21,7 +21,7 @@
   </head>
 
   <body>
-    <div class="container-fluid max-width">
+    <div id="container" class="container-fluid max-width">
       <nav class="navbar">
         <a class="navbar-brand" href="#">
           <svg
@@ -70,6 +70,7 @@
         />
         <button class="btn btn-secondary" type="submit">Search</button>
       </div>
+      
       <div class="jumbotron mt-4">
         <h1 class="display-1">Hello, world!</h1>
         <p class="lead">
@@ -88,30 +89,28 @@
         </p>
       </div>
     </div>
-    <!-- keep until template is implemented or else error with addeventlistener -->
-    <main id="content"></main>
-
-    <!-- TODO: load data into card with js once fetched from api -->
+   
     <!-- Begin Template -->
-    <template>
+    <template id="card-template">
       <div class="row justify-content-center mt-4">
         <div class="col">
           <div class="card">
             <img
+              id="avatar"
               src="https://avatars.githubusercontent.com/u/1238330?v=4"
               class="rounded-circle img-fluid mx-auto mt-4"
               width="150"
               height="150"
             />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">
+              <h5 id="name" class="card-title">Card title</h5>
+              <h6 id="userhandle" class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+              <p id="commitmsg" class="card-text">
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p>
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
+              <a id="date" href="#" class="card-link">Card link</a>
+              <a id="repo" href="#" class="card-link">Another link</a>
             </div>
           </div>
         </div>

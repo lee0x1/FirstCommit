@@ -17,7 +17,17 @@ class Application {
 
             const username = this.utilityService.constructUrl(input);
             const data = await this.dataService.getData(fetch, username);
+            
+            // remove welcome page
+            this.displayService.removeJumbo();
+
+            // render template
+            this.displayService.renderTemplate();
+
+            // poplulate template with data
             this.displayService.renderData(data);
+
+            // TODO: add better logging
             console.info(data.items[0]);
 
         });
