@@ -21,10 +21,19 @@
   </head>
 
   <body>
-    <nav class="navbar">
-      <div class="container-fluid max-width">
+    <div class="container-fluid max-width">
+      <nav class="navbar">
         <a class="navbar-brand" href="#">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40"><path d="M16.944 11h4.306a.75.75 0 0 1 0 1.5h-4.306a5.001 5.001 0 0 1-9.888 0H2.75a.75.75 0 0 1 0-1.5h4.306a5.001 5.001 0 0 1 9.888 0Zm-1.444.75a3.5 3.5 0 1 0-7 0 3.5 3.5 0 0 0 7 0Z"></path></svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="40"
+            height="40"
+          >
+            <path
+              d="M16.944 11h4.306a.75.75 0 0 1 0 1.5h-4.306a5.001 5.001 0 0 1-9.888 0H2.75a.75.75 0 0 1 0-1.5h4.306a5.001 5.001 0 0 1 9.888 0Zm-1.444.75a3.5 3.5 0 1 0-7 0 3.5 3.5 0 0 0 7 0Z"
+            ></path>
+          </svg>
           <strong>First Commit</strong></a
         >
 
@@ -49,9 +58,7 @@
             </ul>
           </li>
         </ul>
-      </div>
-    </nav>
-    <div class="container-fluid max-width">
+      </nav>
       <div class="input-group">
         <span class="input-group-text" id="basic-addon1">@</span>
         <input
@@ -65,36 +72,51 @@
       </div>
       <div class="jumbotron mt-4">
         <h1 class="display-1">Hello, world!</h1>
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-        <hr class="my-4">
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
         <p class="lead">
-          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+          This is a simple hero unit, a simple jumbotron-style component for
+          calling extra attention to featured content or information.
+        </p>
+        <hr class="my-4" />
+        <p>
+          It uses utility classes for typography and spacing to space content
+          out within the larger container.
+        </p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="#" role="button"
+            >Learn more</a
+          >
         </p>
       </div>
     </div>
-      <!-- keep until template is implemented or else error with addeventlistener -->
-      <main id="content"></main>
+    <!-- keep until template is implemented or else error with addeventlistener -->
+    <main id="content"></main>
 
-      <!-- TODO: load data into card with js once fetched from api -->
-      <!-- Begin Template -->
-      <template>
-        <div class="row justify-content-center mt-4">
-          <div class="col">
-              <div class="card">
-                <img src="https://avatars.githubusercontent.com/u/1238330?v=4"
-                  class="rounded-circle img-fluid mx-auto mt-4" width="150" height="150" />
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="card-link">Card link</a>
-                  <a href="#" class="card-link">Another link</a>
-                </div>
-              </div>
+    <!-- TODO: load data into card with js once fetched from api -->
+    <!-- Begin Template -->
+    <template>
+      <div class="row justify-content-center mt-4">
+        <div class="col">
+          <div class="card">
+            <img
+              src="https://avatars.githubusercontent.com/u/1238330?v=4"
+              class="rounded-circle img-fluid mx-auto mt-4"
+              width="150"
+              height="150"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
           </div>
         </div>
-      </template>
-      <!-- End Template -->
+      </div>
+    </template>
+    <!-- End Template -->
   </body>
 </html>
