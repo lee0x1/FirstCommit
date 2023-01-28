@@ -1,18 +1,26 @@
 // inputService.mjs
 
-const getInput = (callback) => {
-    let username;
-    const searchBtn = document.querySelector(".btn");
-    // TODO: Enter key fire click event
+const nameInput = document.querySelector("input");
+const searchBtn = document.querySelector(".btn");
+
+const getInput = (callback) => {  
+    // TODO: Refractor to array of addEventListener?
     searchBtn.addEventListener("click", (event) => {
-      event.preventDefault();
-      const nameInput = document.querySelector("input");
-      username = nameInput.value;
-      nameInput.value = '';
-      callback(username);
-      console.info(`first commit for ${username}`)
+      handleInput(callback);
+    });
+    nameInput.addEventListener("keyup", (event) => {
+      if(event.key === "Enter")
+        handleInput(callback);
     });
 };
+
+const handleInput = (callback) => {
+  let username;
+  username = nameInput.value;
+  nameInput.value = '';
+  callback(username);
+  console.info(`first commit for ${username}`)
+}
 
 export const InputService = {
   getInput: getInput,
