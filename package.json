@@ -7,7 +7,8 @@
     "dev": "parcel src/index.html",
     "build": "parcel build --public-url ./ src/index.html",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --verbose",
-    "test::watch": "npm test -- --watch"
+    "test::watch": "npm test -- --watch",
+    "test::cov": "npm test -- --coverage"
   },
   "keywords": [],
   "author": "",
