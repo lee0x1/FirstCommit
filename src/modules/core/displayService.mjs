@@ -1,15 +1,22 @@
 // displayService.mjs
 
 const removeJumbo = () => {
+    // check if jumbotron exists in dom
     const jumbo = document.querySelector('.jumbotron');
-    jumbo.remove();
+    if(jumbo)
+      jumbo.remove();
 }
   
 const renderTemplate = () => {
+  // check if card exists in dom
+  if(!document.querySelector('.card')){
     const container = document.querySelector("#container");
     const template = document.querySelector('#card-template');
     const clone = template.content.cloneNode(true);
     container.appendChild(clone);
+  }
+      
+    
 }
 
 const renderData = (data) => {
