@@ -38,7 +38,7 @@ const renderData = (data) => {
     // remove string after new line is encountered
     const msg = _commitMsg.split('\n')[0];
     
-    avatar.textContent = _avatar;
+    avatar.src = _avatar;
     name.textContent = _name;
     userHandle.textContent = `@${_userHandle}`;
     commitMsg.textContent = msg;
