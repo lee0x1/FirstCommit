@@ -28,9 +28,22 @@ const renderData = (data) => {
     const commitMsg = document.querySelector("#commitmsg");
     const date = document.querySelector("#date");
     const repo = document.querySelector("#repo");
+    const profileUrl = document.querySelector("#profileurl");
+    const commitUrl = document.querySelector("#commiturl");
+    const repoUrl = document.querySelector("#repourl");
 
     // destructure values 
-    const {  _avatar, _name , _userHandle, _commitMsg, _date, _repo } = extractUsefulData(data);
+    const {
+        _avatar,
+        _name ,
+        _userHandle,
+        _commitMsg,
+        _date,
+        _repo,
+        _profileUrl,
+        _commitUrl,
+        _repoUrl
+    } = extractUsefulData(data);
     
     // date format: MM/DD/YYYY
     const prettyDate = convertDate(_date);
@@ -43,7 +56,10 @@ const renderData = (data) => {
     userHandle.textContent = `@${_userHandle}`;
     commitMsg.textContent = msg;
     date.textContent = prettyDate;
-    repo.textContent = _repo
+    repo.textContent = _repo;
+    profileUrl.href = _profileUrl;
+    commitUrl.href = _commitUrl;
+    repoUrl.href = _repoUrl;
 }
 
 // TODO : move to utilities service???
@@ -60,14 +76,20 @@ const extractUsefulData = (data) => {
     const _commitMsg = data.items[0].commit.message;
     const _date = data.items[0].commit.author.date;
     const _repo = data.items[0].repository.name;
-    
+    const _profileUrl = data.items[0].author.html_url;
+    const _commitUrl = data.items[0].html_url;
+    const _repoUrl = data.items[0].repository.html_url;
+
     return {
         _avatar,
         _name,
         _userHandle,
         _commitMsg,
         _date,
-        _repo
+        _repo,
+        _profileUrl,
+        _commitUrl,
+        _repoUrl
     }
 }
 

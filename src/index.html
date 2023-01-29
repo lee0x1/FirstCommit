@@ -98,19 +98,27 @@
             <img
               id="avatar"
               src="https://avatars.githubusercontent.com/u/1238330?v=4"
-              class="rounded-circle img-fluid mx-auto mt-4"
+              class="rounded-circle img-fluid mx-auto mt-4 mb-2"
               width="150"
               height="150"
             />
             <div class="card-body">
               <h5 id="name" class="card-title">Card title</h5>
-              <h6 id="userhandle" class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p id="commitmsg" class="card-text">
+              <a id="profileurl" class="text-decoration-none" href="#" target="_blank">
+                <h6 id="userhandle" class="card-subtitle mb-3 text-muted">Card subtitle</h6>
+              </a>
+              <a id="commiturl" class="text-decoration-none text-dark" href="#" target="_blank">
+                <p id="commitmsg" class="card-text mb-2">
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </p>
-              <a id="date" href="#" class="card-link">Card link</a>
-              <a id="repo" href="#" class="card-link">Another link</a>
+              </a>
+              <p class="float-start mb-0">
+                <small id="date" class="text-muted float-left">Link</small>
+              </p>
+                <a id="repourl" class="text-decoration-none text-dark" href="#" target="_blank">
+                  <p id="repo" class="float-end mb-0"></p>
+                </a>
             </div>
           </div>
         </div>
