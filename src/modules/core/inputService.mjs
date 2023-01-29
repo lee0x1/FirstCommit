@@ -10,6 +10,8 @@ const getInput = (callback) => {
     });
     nameInput.addEventListener("keyup", (event) => {
       if(event.key === "Enter")
+      // close popup keyboard on mobile
+      event.target.blur();
         handleInput(callback);
     });
 };
