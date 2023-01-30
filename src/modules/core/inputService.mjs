@@ -11,9 +11,7 @@ const getInput = (callback) => {
     nameInput.addEventListener("keyup", (event) => {
       if(event.key === "Enter"){
         // close popup keyboard on mobile
-        // correct way is to set inputMode property
-        // https://stackoverflow.com/a/58870308/1176153
-        nameInput.inputMode = 'none';
+        nameInput.blur();
         handleInput(callback);
       }
     });
