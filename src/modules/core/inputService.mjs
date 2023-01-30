@@ -9,10 +9,13 @@ const getInput = (callback) => {
       handleInput(callback);
     });
     nameInput.addEventListener("keyup", (event) => {
-      if(event.key === "Enter")
-      // close popup keyboard on mobile
-      event.target.blur();
+      if(event.key === "Enter"){
+        // close popup keyboard on mobile
+        // correct way is to set inputMode property
+        // https://stackoverflow.com/a/58870308/1176153
+        nameInput.inputMode = 'none';
         handleInput(callback);
+      }
     });
 };
 
