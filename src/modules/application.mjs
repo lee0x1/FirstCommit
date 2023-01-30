@@ -19,15 +19,20 @@ class Application {
                 const data = await this.dataService.getData(fetch, username);
                 
                 if(data.items === undefined || data.items.length === 0){
-                    this.displayService.removeJumbo();
+                    // remove welcome page
+                    this.displayService.removeElement(this.displayService.elementList.jumbotron);
+
                     this.displayService.removeCard();
                     this.displayService.render404();
 
                     throw new Error(`username not found!`);
                 } else {
                     // remove welcome page
-                    this.displayService.removeJumbo();
+                    this.displayService.removeElement(this.displayService.elementList.jumbotron);
+
+                    // remove 404 
                     this.displayService.remove404();
+
                     // render template
                     this.displayService.renderTemplate();
 

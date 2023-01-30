@@ -1,13 +1,17 @@
 // displayService.mjs
 
-// TODO: multiple removes are very smelly...
-const removeJumbo = () => {
-    // check if jumbotron exists in dom
-    const jumbo = document.querySelector('.jumbotron');
-    if(jumbo)
-      jumbo.remove();
+const elementList = {
+    jumbotron: '.jumbotron'
 }
 
+const removeElement = function(selector) {
+    const element = document.querySelector(selector);
+    if(element){
+        element.remove();
+    }
+}
+
+// TODO: multiple removes are very smelly...
 const remove404 = () => {
     // check if jumbotron exists in dom
     const container404 = document.querySelector('#container404');
@@ -118,10 +122,11 @@ const extractUsefulData = (data) => {
 }
 
 export const DisplayService = {
-    removeJumbo: removeJumbo,
     renderTemplate: renderTemplate,
     renderData: renderData,
     render404: render404,
     remove404: remove404,
-    removeCard: removeCard
+    removeCard: removeCard,
+    elementList: elementList,
+    removeElement: removeElement
 }
