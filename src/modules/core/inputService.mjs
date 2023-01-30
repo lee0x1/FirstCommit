@@ -24,7 +24,7 @@ const handleInput = (callback) => {
   username = nameInput.value;
   nameInput.value = '';
   callback(username);
-  console.info(`first commit for ${username}`)
+  console.info(`searching for "${username}'s" first commit`)
 }
 
 export const InputService = {
