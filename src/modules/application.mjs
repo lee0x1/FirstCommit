@@ -14,22 +14,33 @@ class Application {
 
     run() {
         this.inputService.getInput(async (input) => {
+            try {
+                const username = this.utilityService.constructUrl(input);
+                const data = await this.dataService.getData(fetch, username);
+                
+                if(data.items === undefined || data.items.length === 0){
+                    this.displayService.removeJumbo();
+                    this.displayService.removeCard();
+                    this.displayService.render404();
 
-            const username = this.utilityService.constructUrl(input);
-            const data = await this.dataService.getData(fetch, username);
-            
-            // remove welcome page
-            this.displayService.removeJumbo();
+                    throw new Error(`username not found!`);
+                } else {
+                    // remove welcome page
+                    this.displayService.removeJumbo();
+                    this.displayService.remove404();
+                    // render template
+                    this.displayService.renderTemplate();
 
-            // render template
-            this.displayService.renderTemplate();
+                    // poplulate template with data
+                    this.displayService.renderData(data);
 
-            // poplulate template with data
-            this.displayService.renderData(data);
-
-            // TODO: add better logging
-            console.info(data.items[0]);
-
+                    // TODO: add better logging
+                    console.info(data.items[0]);
+                }
+            } catch (error) {
+                // TODO: Handle error, pass something to show 404 in renderer maybe
+                console.error(error);
+            }
         });
     }
 }

@@ -1,10 +1,25 @@
 // displayService.mjs
 
+// TODO: multiple removes are very smelly...
 const removeJumbo = () => {
     // check if jumbotron exists in dom
     const jumbo = document.querySelector('.jumbotron');
     if(jumbo)
       jumbo.remove();
+}
+
+const remove404 = () => {
+    // check if jumbotron exists in dom
+    const container404 = document.querySelector('#container404');
+    if(container404)
+      container404.remove();
+}
+  
+const removeCard = () => {
+    // check if jumbotron exists in dom
+    const row = document.querySelector('.row');
+    if(row)
+      row.remove();
 }
   
 const renderTemplate = () => {
@@ -14,8 +29,17 @@ const renderTemplate = () => {
     const template = document.querySelector('#card-template');
     const clone = template.content.cloneNode(true);
     container.appendChild(clone);
-  }
-      
+    }
+}
+
+const render404 = () => {
+  // check if card exists in dom
+  if(!document.querySelector('#container404')){
+    const container = document.querySelector("#container");
+    const template = document.querySelector('#page404');
+    const clone = template.content.cloneNode(true);
+    container.appendChild(clone);
+}
     
 }
 
@@ -97,4 +121,7 @@ export const DisplayService = {
     removeJumbo: removeJumbo,
     renderTemplate: renderTemplate,
     renderData: renderData,
+    render404: render404,
+    remove404: remove404,
+    removeCard: removeCard
 }
