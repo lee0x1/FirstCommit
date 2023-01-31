@@ -13,8 +13,13 @@ class Application {
     }
 
     run() {
-        this.inputService.getInput(async (input) => {
+        this.inputService.getInput(async (input, isValid) => {
             try {
+                if(!isValid){
+                    // TODO: notify user on page username not valid
+                    throw new Error(`invalid github username`);
+                }
+
                 const username = this.utilityService.constructUrl(input);
                 const data = await this.dataService.getData(fetch, username);
                 

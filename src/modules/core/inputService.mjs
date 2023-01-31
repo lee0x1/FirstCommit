@@ -17,13 +17,23 @@ const getInput = (callback) => {
     });
 };
 
+const validateInput = (input) => {
+  // valid github usernames return true else return false
+  return /^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$/i.test(input);
+}
+
 const handleInput = (callback) => {
-  let username;
-  username = nameInput.value;
-  callback(username);
-  console.info(`searching for "${username}'s" first commit`)
+    let username;
+    let isValid;
+    if(!validateInput(nameInput.value)){
+      isValid = false;
+      username = nameInput.value;
+      callback(username, isValid);
+      console.info(`searching for "${username}'s" first commit`)
+    }
 }
 
 export const InputService = {
   getInput: getInput,
+  validateInput: validateInput,
 }
