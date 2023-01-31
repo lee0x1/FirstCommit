@@ -1,7 +1,9 @@
 // displayService.mjs
 
 const elementList = {
-    jumbotron: '.jumbotron'
+    jumbotron: '.jumbotron',
+    card: '.row',
+    page404: '#container404',
 }
 
 const removeElement = function(selector) {
@@ -11,21 +13,6 @@ const removeElement = function(selector) {
     }
 }
 
-// TODO: multiple removes are very smelly...
-const remove404 = () => {
-    // check if jumbotron exists in dom
-    const container404 = document.querySelector('#container404');
-    if(container404)
-      container404.remove();
-}
-  
-const removeCard = () => {
-    // check if jumbotron exists in dom
-    const row = document.querySelector('.row');
-    if(row)
-      row.remove();
-}
-  
 const renderTemplate = () => {
   // check if card exists in dom
   if(!document.querySelector('.card')){
@@ -125,8 +112,6 @@ export const DisplayService = {
     renderTemplate: renderTemplate,
     renderData: renderData,
     render404: render404,
-    remove404: remove404,
-    removeCard: removeCard,
     elementList: elementList,
     removeElement: removeElement
 }

@@ -22,7 +22,7 @@ class Application {
                     // remove welcome page
                     this.displayService.removeElement(this.displayService.elementList.jumbotron);
 
-                    this.displayService.removeCard();
+                    this.displayService.removeElement(this.displayService.elementList.card);
                     this.displayService.render404();
 
                     throw new Error(`username not found!`);
@@ -31,7 +31,7 @@ class Application {
                     this.displayService.removeElement(this.displayService.elementList.jumbotron);
 
                     // remove 404 
-                    this.displayService.remove404();
+                    this.displayService.removeElement(this.displayService.elementList.page404);
 
                     // render template
                     this.displayService.renderTemplate();
