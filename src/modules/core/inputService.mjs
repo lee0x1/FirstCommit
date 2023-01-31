@@ -20,7 +20,6 @@ const getInput = (callback) => {
 const handleInput = (callback) => {
   let username;
   username = nameInput.value;
-  nameInput.value = '';
   callback(username);
   console.info(`searching for "${username}'s" first commit`)
 }
