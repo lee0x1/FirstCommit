@@ -23,23 +23,35 @@ class Application {
                 const username = this.utilityService.constructUrl(input);
                 const data = await this.dataService.getData(fetch, username);
                 
+                // cant find user then...
                 if(data.items === undefined || data.items.length === 0){
                     // remove welcome page
                     this.displayService.removeElement(this.displayService.elementList.jumbotron);
-
+                    
+                    // remove card
                     this.displayService.removeElement(this.displayService.elementList.card);
-                    this.displayService.render404();
+                    
+                    // render 404 page
+                    this.displayService.renderTemplate(
+                        this.displayService.elementList.container404,
+                        this.displayService.elementList.template404,
+                        this.displayService.elementList.container,
+                    );
 
                     throw new Error(`username not found!`);
                 } else {
                     // remove welcome page
                     this.displayService.removeElement(this.displayService.elementList.jumbotron);
 
-                    // remove 404 
-                    this.displayService.removeElement(this.displayService.elementList.page404);
+                    // remove 404 page
+                    this.displayService.removeElement(this.displayService.elementList.notFound);
 
-                    // render template
-                    this.displayService.renderTemplate();
+                    // render card
+                    this.displayService.renderTemplate(
+                        this.displayService.elementList.card,
+                        this.displayService.elementList.cardTemplate,
+                        this.displayService.elementList.container,
+                    );
 
                     // poplulate template with data
                     this.displayService.renderData(data);
