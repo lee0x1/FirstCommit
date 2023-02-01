@@ -1,25 +1,22 @@
 // displayService.mjs
 
 const elementList = {
-  // begin template elements
-  jumbotron: ".jumbotron",
+  jumbotron: ".jumbotron", // begin template elements
   cardContainer: ".row",
   notFound: "#container404",
-  template404: '#page404',
+  template404: "#page404",
   container: "#container",
   cardTemplate: "#card-template",
-  card: '.card',
-  // begin data elements
-  avatar: '#avatar',
-  name: '#name',
-  userHandle: '#userhandle',
-  commitMsg: '#commitmsg',
-  date: '#date',
-  repo: '#repo',
-  profileUrl: '#profileurl',
-  commitUrl: '#commiturl',
-  repoUrl: '#repourl',
-
+  card: ".card",
+  avatar: "#avatar", // begin data elements
+  name: "#name",
+  userHandle: "#userhandle",
+  commitMsg: "#commitmsg",
+  date: "#date",
+  repo: "#repo",
+  profileUrl: "#profileurl",
+  commitUrl: "#commiturl",
+  repoUrl: "#repourl",
 };
 
 const removeElement = function (selector) {
@@ -82,28 +79,18 @@ const renderData = (data) => {
   repoUrl.href = _repoUrl;
 };
 
-const extractUsefulData = (data) => {
-  // TODO: fix .commit is undefined when its a orginization repo
-  const _avatar = data.items[0].author.avatar_url;
-  const _name = data.items[0].commit.author.name;
-  const _userHandle = data.items[0].author.login;
-  const _commitMsg = data.items[0].commit.message;
-  const _date = data.items[0].commit.author.date;
-  const _repo = data.items[0].repository.name;
-  const _profileUrl = data.items[0].author.html_url;
-  const _commitUrl = data.items[0].html_url;
-  const _repoUrl = data.items[0].repository.html_url;
-
+const extractUsefulData = (data) => {  
+  const firstCommit = data.items[0];
   return {
-    _avatar,
-    _name,
-    _userHandle,
-    _commitMsg,
-    _date,
-    _repo,
-    _profileUrl,
-    _commitUrl,
-    _repoUrl,
+    _avatar: firstCommit.author.avatar_url,
+    _name: firstCommit.commit.author.name,
+    _userHandle: firstCommit.author.login,
+    _commitMsg: firstCommit.commit.message,
+    _date: firstCommit.commit.author.date,
+    _repo: firstCommit.repository.name,
+    _profileUrl: firstCommit.author.html_url,
+    _commitUrl: firstCommit.html_url,
+    _repoUrl: firstCommit.repository.html_url,
   };
 };
 
@@ -116,6 +103,6 @@ const convertDate = (utcDate) => {
 export const DisplayService = {
   renderTemplate: renderTemplate,
   renderData: renderData,
-  elementList: elementList,
   removeElement: removeElement,
+  elementList: elementList,
 };
