@@ -38,6 +38,39 @@
         >
         <ul class="navbar-nav me-auto mb-0 mb-lg-0">
           <li class="nav-item dropdown">
+            <!-- Button trigger modal -->
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="40"
+            height="40"
+          >
+            <path
+              d="M16.944 11h4.306a.75.75 0 0 1 0 1.5h-4.306a5.001 5.001 0 0 1-9.888 0H2.75a.75.75 0 0 1 0-1.5h4.306a5.001 5.001 0 0 1 9.888 0Zm-1.444.75a3.5 3.5 0 1 0-7 0 3.5 3.5 0 0 0 7 0Z"
+            ></path>
+          </svg>
+        <h5 class="modal-title" id="aboutModal">First Commit</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        TODO: add about info
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
             <a
               class="nav-link dropdown-toggle"
               href="#"
@@ -46,10 +79,10 @@
               aria-expanded="false"
             >
             </a>
-            <!-- TODO: fix positioning on smaller screens -->
+            <!-- TODO: fix dropdown mobile positioning -->
             <ul class="dropdown-menu position-absolute">
               <li><a class="dropdown-item" href="#">Search history</a></li>
-              <li><a class="dropdown-item" href="#">About</a></li>
+              <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#aboutModal">About</a></li>
               <li>
                 <hr class="dropdown-divider" />
               </li>
