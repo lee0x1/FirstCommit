@@ -1,11 +1,12 @@
 // inputService.mjs
 
 const nameInput = document.querySelector("input");
-const searchBtn = document.querySelector(".btn");
+const searchBtn = document.querySelector("#searchBtn");
 
 const getInput = (callback) => {  
     // TODO: Refractor to array of addEventListener?
     searchBtn.addEventListener("click", (event) => {
+        console.log('clicked')
       handleInput(callback);
     });
     nameInput.addEventListener("keyup", (event) => {
