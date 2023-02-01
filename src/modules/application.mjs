@@ -30,7 +30,12 @@ class Application {
         // check if user exists
         if (data.items === undefined || data.items.length === 0) {
           // user not found
-
+          
+          // remove 404 page
+          this.displayService.removeElement(
+            this.displayService.elementList.notFound
+          );
+          
           // remove welcome page
           this.displayService.removeElement(
             this.displayService.elementList.jumbotron
