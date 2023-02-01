@@ -24,13 +24,15 @@ const validateInput = (input) => {
 
 const handleInput = (callback) => {
     let username;
-    let isValid;
-    if(!validateInput(nameInput.value)){
-      isValid = false;
-      username = nameInput.value;
-      callback(username, isValid);
-      console.info(`searching for "${username}'s" first commit`)
-    }
+    let isValid = false;
+    if(validateInput(nameInput.value))
+      isValid = true;
+    
+    username = nameInput.value;
+    callback(username, isValid);
+    console.info(`searching for "${username}'s" first commit`);
+
+     
 }
 
 export const InputService = {
