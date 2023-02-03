@@ -5,14 +5,6 @@ const searchBtn = document.querySelector("#searchBtn");
 const colorMode = document.querySelector('#color-mode');
 const html = document.querySelector('html');
 
-// TODO: initial implementation need refractor
-colorMode.addEventListener('click', (e) => {
-    if ((html.dataset.bsTheme === "light"))
-        html.dataset.bsTheme = "dark";
-    else
-        html.dataset.bsTheme = "light";
-});
-
 const getInput = (callback) => {  
     // TODO: Refractor to array of addEventListener?
     searchBtn.addEventListener("click", (event) => {
