@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -19,7 +19,6 @@
     <script type="module" src="./main.mjs"></script>
     <title>First Commit</title>
   </head>
-
   <body>
     <div id="container" class="container-fluid max-width">
       <nav class="navbar">
@@ -82,16 +81,15 @@
             </ul>
           </li>
         </ul>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="color-mode">
+            <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+        </div>
       </nav>
       <div class="input-group">
         <span class="input-group-text">@</span>
-        <input
-          type="text"
-          class="form-control shadow-none"
-          placeholder="Username"
-          aria-label="Username"
-          aria-describedby="basic-addon1"
-        />
+        <input id="username-input" type="text" class="form-control shadow-none" placeholder="Username" aria-label="Username"
+            aria-describedby="basic-addon1" />
         <button id="searchBtn" class="btn btn-secondary" type="submit">Search</button>
       </div>
       
