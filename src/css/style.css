@@ -8,3 +8,7 @@
 .form-control:focus {
     border-color: #dee2e6;
 }
+
+[data-bs-theme=dark] svg {
+    fill: #f8f9fa;
+}
