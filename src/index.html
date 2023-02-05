@@ -40,21 +40,40 @@
         <ul class="navbar-nav me-auto mb-0 mb-lg-0">
           <li class="nav-item dropdown">
             <!-- Modal -->
-            <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModal" aria-hidden="true">
+            <div
+              class="modal fade"
+              id="aboutModal"
+              tabindex="-1"
+              aria-labelledby="aboutModal"
+              aria-hidden="true"
+            >
               <div class="modal-dialog modal-sm mt-5">
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title" id="aboutModal">About</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
                   </div>
                   <div class="modal-body">
                     <h3>First Commit</h3>
-                    <p>First Commit is made possible by open source software.</p>
+                    <p>
+                      First Commit is made possible by open source software.
+                    </p>
                   </div>
                   <div class="modal-footer">
                     <p>Copyright 2023 Lee Howard. All rights reserved.</p>
-                
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
                   </div>
                 </div>
               </div>
@@ -70,31 +89,58 @@
             <!-- TODO: fix dropdown mobile positioning -->
             <ul class="dropdown-menu position-absolute">
               <li><a class="dropdown-item" href="#">Search history</a></li>
-              <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#aboutModal">About</a></li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#aboutModal"
+                  >About</a
+                >
+              </li>
               <li>
                 <hr class="dropdown-divider" />
               </li>
-              <li><a
-                    class="dropdown-item"
-                    href="https://github.com/leehowardx/FirstCommit/issues/new/choose"
-                    target="_blank"
-                  >Report an issue</a>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="https://github.com/leehowardx/FirstCommit/issues/new/choose"
+                  target="_blank"
+                  >Report an issue</a
+                >
               </li>
             </ul>
           </li>
         </ul>
         <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="color-mode">
-            <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+          <input
+            class="form-check-input"
+            type="checkbox"
+            role="switch"
+            id="color-mode"
+          />
+          <label class="form-check-label" for="flexSwitchCheckDefault"></label>
         </div>
       </nav>
       <form id="submit-form" autocomplete="off">
-      <div class="input-group">
-        <span class="input-group-text">@</span>
-        <input id="username-input" type="search" class="form-control shadow-none" placeholder="Username" aria-label="Username"
-            aria-describedby="basic-addon1" required pattern="^[A-Za-z\d](?:[A-Za-z\d]|-(?=[A-Za-z\d])){0,38}$"/>
-        <button id="searchBtn" class="btn btn-secondary" type="submit">Search</button>
-      </div>
+        <div class="input-group">
+          <span class="input-group-text">@</span>
+          <input
+            id="username-input"
+            type="search"
+            class="form-control shadow-none"
+            placeholder="Username"
+            aria-label="Username"
+            aria-describedby="basic-addon1"
+            required
+            pattern="^[A-Za-z\d](?:[A-Za-z\d]|-(?=[A-Za-z\d])){0,38}$"
+            oninvalid="this.setCustomValidity('Enter valid github username')"
+            oninput="this.setCustomValidity('')"
+          />
+          <button id="searchBtn" class="btn btn-secondary" type="submit">
+            Search
+          </button>
+        </div>
       </form>
 
       <div class="jumbotron mt-4">
@@ -110,16 +156,16 @@
         </p>
         <p class="lead">
           <a
-          class="btn btn-primary btn-lg"
-          href="https://github.com/lee0x7BD/FirstCommit"
-          role="button"
-          target="_blank"
+            class="btn btn-primary btn-lg"
+            href="https://github.com/lee0x7BD/FirstCommit"
+            role="button"
+            target="_blank"
             >Learn more</a
           >
         </p>
       </div>
     </div>
-   
+
     <!-- Begin Template -->
     <template id="card-template">
       <div class="row justify-content-center mt-4">
@@ -134,21 +180,38 @@
             />
             <div class="card-body">
               <h5 id="name" class="card-title">Card title</h5>
-              <a id="profileurl" class="text-decoration-none" href="#" target="_blank">
-                <h6 id="userhandle" class="card-subtitle mb-3 text-muted">Card subtitle</h6>
+              <a
+                id="profileurl"
+                class="text-decoration-none"
+                href="#"
+                target="_blank"
+              >
+                <h6 id="userhandle" class="card-subtitle mb-3 text-muted">
+                  Card subtitle
+                </h6>
               </a>
-              <a id="commiturl" class="text-decoration-none" href="#" target="_blank">
+              <a
+                id="commiturl"
+                class="text-decoration-none"
+                href="#"
+                target="_blank"
+              >
                 <p id="commitmsg" class="card-text mb-3">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
               </a>
               <p class="float-start mb-0">
                 <small id="date" class="text-muted float-left">Link</small>
               </p>
-                <a id="repourl" class="text-decoration-none" href="#" target="_blank">
-                  <p id="repo" class="float-end mb-0"></p>
-                </a>
+              <a
+                id="repourl"
+                class="text-decoration-none"
+                href="#"
+                target="_blank"
+              >
+                <p id="repo" class="float-end mb-0"></p>
+              </a>
             </div>
           </div>
         </div>
@@ -158,16 +221,19 @@
 
     <!-- begin template -->
     <template id="page404">
-      <div id="container404" class="d-flex align-items-center justify-content-center mt-4">
-            <div class="text-center">
-                <h1 class="display-1 fw-bold">404</h1>
-                <p class="fs-3"> <span class="text-danger">Opps!</span> User not found.</p>
-                <p class="lead">
-                    The user you’re looking for doesn’t exist.
-                  </p>
-                <a href="/" class="btn btn-danger">Go Home</a>
-            </div>
+      <div
+        id="container404"
+        class="d-flex align-items-center justify-content-center mt-4"
+      >
+        <div class="text-center">
+          <h1 class="display-1 fw-bold">404</h1>
+          <p class="fs-3">
+            <span class="text-danger">Opps!</span> User not found.
+          </p>
+          <p class="lead">The user you’re looking for doesn’t exist.</p>
+          <a href="/" class="btn btn-danger">Go Home</a>
         </div>
+      </div>
     </template>
   </body>
 </html>
