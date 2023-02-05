@@ -53,7 +53,8 @@
             } else {
                 document.documentElement.setAttribute("data-bs-theme", "light");
             }
-            const theme = document.documentElement.getAttribute("data-bs-theme");
+            const theme =
+                document.documentElement.getAttribute("data-bs-theme");
             localStorage.setItem("theme", theme);
             setTheme(theme);
             console.log(theme);

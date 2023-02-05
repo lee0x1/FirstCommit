@@ -8,8 +8,8 @@ const getData = async (provider, url) => {
     } catch (error) {
         return error;
     }
-}
+};
 
 export const DataService = {
     getData: getData,
-}
+};
