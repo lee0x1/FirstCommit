@@ -32,7 +32,6 @@
         }
     };
 
-    setTheme(getPreferredTheme());
 
     window
         .matchMedia("(prefers-color-scheme: dark)")
@@ -43,6 +42,9 @@
         });
 
     window.addEventListener("DOMContentLoaded", () => {
+        // fix: set theme immedaitly dont see light theme first
+        setTheme(getPreferredTheme());
+
         const colorToggler = document.querySelector("#color-mode");
         // set toggle on if local storage theme preference is dark
         if (getPreferredTheme() === "dark") colorToggler.checked = true;
