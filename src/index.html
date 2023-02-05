@@ -88,11 +88,11 @@
             <label class="form-check-label" for="flexSwitchCheckDefault"></label>
         </div>
       </nav>
-      <form id="submit-form">
+      <form id="submit-form" autocomplete="off">
       <div class="input-group">
         <span class="input-group-text">@</span>
-        <input id="username-input" type="text" class="form-control shadow-none" placeholder="Username" aria-label="Username"
-            aria-describedby="basic-addon1" required pattern="^[A-Za-z\d](?:[A-Za-z\d]|-(?=[Z-Za-z\d])){0,38}$"/>
+        <input id="username-input" type="search" class="form-control shadow-none" placeholder="Username" aria-label="Username"
+            aria-describedby="basic-addon1" required pattern="^[A-Za-z\d](?:[A-Za-z\d]|-(?=[A-Za-z\d])){0,38}$"/>
         <button id="searchBtn" class="btn btn-secondary" type="submit">Search</button>
       </div>
       </form>
