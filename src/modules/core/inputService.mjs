@@ -1,47 +1,60 @@
 // inputService.mjs
 
-const nameInput = document.querySelector("#username-input");
-const formSubmit = document.querySelector("#submit-form");
+const mainHandler = (callback) => {
+    const usernameInput = document.querySelector("#username-input");
+    const formToSubmit = document.querySelector("#submit-form");
 
-const getInput = (callback) => {
+    setupRegExpr(usernameInput);
+    validateInput(usernameInput);
+    resetValidation(usernameInput);
+    submitForm([usernameInput, formToSubmit], callback);
+};
+
+const setupRegExpr = (input) => {
     // set regexpr pattern input validation
-    nameInput.setAttribute(
+    input.setAttribute(
         "pattern",
         // TODO: explain what this does step by step
         "^[A-Za-z\\d](?:[A-Za-z\\d]|-(?=[A-Za-z\\d])){0,38}$"
     );
-    
-    // once its invalid 
-    nameInput.addEventListener("invalid", () => {
-        const validityState = nameInput.validity;
+};
+
+const validateInput = (input) => {
+    // once its invalid
+    input.addEventListener("invalid", () => {
+        const validityState = input.validity;
 
         if (validityState.valueMissing) {
-            nameInput.setCustomValidity("required");
+            input.setCustomValidity("required");
         } else if (validityState.patternMismatch) {
-            nameInput.setCustomValidity("enter valid github username");
+            input.setCustomValidity("enter valid github username");
         } else if (validityState.tooShort) {
-            nameInput.setCustomValidity("too short");
+            input.setCustomValidity("too short");
         } else if (validityState.tooLong) {
-            nameInput.setCustomValidity("too long");
+            input.setCustomValidity("too long");
         }
     });
+};
 
+const resetValidation = (input) => {
     // remove validation tooltip when typing again unless still error
-    nameInput.addEventListener("input", () => {
-        nameInput.setCustomValidity("");
+    input.addEventListener("input", () => {
+        input.setCustomValidity("");
     });
+};
 
+const submitForm = ([input, form], callback) => {
     // submit form after validation pass. send callback
-    formSubmit.addEventListener("submit", (event) => {
+    form.addEventListener("submit", (event) => {
         console.info("username submitted");
 
-        nameInput.blur();
+        input.blur();
         event.preventDefault();
-        formSubmit.checkValidity();
-        callback(nameInput.value);
+        form.checkValidity();
+        callback(input.value);
     });
 };
 
 export const InputService = {
-    getInput: getInput,
+    mainHandler: mainHandler,
 };

@@ -13,7 +13,7 @@ class Application {
     }
 
     run() {
-        this.inputService.getInput(async (input) => {
+        this.inputService.mainHandler(async (input) => {
             try {
                 const username = this.utilityService.constructUrl(input);
                 const data = await this.dataService.getData(fetch, username);
