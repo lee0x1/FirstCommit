@@ -10,7 +10,6 @@ const getInput = (callback) => {
   // TODO: Refractor to array of addEventListener?
     formSubmit.addEventListener("submit", (event) => {
         console.log('username submitted');
-        // console.log(validateInput(nameInput.value));
         nameInput.blur();
         event.preventDefault();
         callback(nameInput.value);
