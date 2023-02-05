@@ -133,9 +133,8 @@
             aria-label="Username"
             aria-describedby="basic-addon1"
             required
-            pattern="^[A-Za-z\d](?:[A-Za-z\d]|-(?=[A-Za-z\d])){0,38}$"
-            oninvalid="this.setCustomValidity('Enter valid github username')"
-            oninput="this.setCustomValidity('')"
+            minlength="1"
+            maxlength="38"
           />
           <button id="searchBtn" class="btn btn-secondary" type="submit">
             Search
