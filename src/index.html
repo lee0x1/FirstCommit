@@ -26,7 +26,7 @@
   </head>
   <body>
     <div id="container" class="container-fluid max-width">
-      <nav class="navbar">
+      <nav class="navbar align-items-start mb-2">
         <a class="navbar-brand" href="/">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -40,8 +40,11 @@
           </svg>
           <strong>First Commit</strong></a
         >
-        <ul class="navbar-nav me-auto mb-0 mb-lg-0">
-          <li class="nav-item dropdown">
+        <div>
+            
+        </div>
+        <ul class="navbar-nav mb-lg-0">
+          <li class="dropdown">
             <!-- Modal -->
             <div
               class="modal fade"
@@ -82,16 +85,22 @@
               </div>
             </div>
             <a
-              class="nav-link dropdown-toggle"
+              class="nav-link dropdown-toggle align-items-center text-body fs-6 d-flex"
               href="#"
               role="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
-            >
+            >Menu
             </a>
             <!-- TODO: fix dropdown mobile positioning -->
-            <ul class="dropdown-menu position-absolute">
-              <li><a class="dropdown-item" href="#">Search history</a></li>
+            <ul class="dropdown-menu fs-6 position-absolute dropdown-menu-end">
+                <li class="dropdown-item">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="color-mode" />
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Dark Mode</label>
+                    </div>
+                </li>
+                <li><a class="dropdown-item" href="#">Search history</a></li>
               <li>
                 <a
                   class="dropdown-item"
@@ -115,15 +124,7 @@
             </ul>
           </li>
         </ul>
-        <div class="form-check form-switch">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            role="switch"
-            id="color-mode"
-          />
-          <label class="form-check-label" for="flexSwitchCheckDefault"></label>
-        </div>
+        
       </nav>
       <form id="submit-form" autocomplete="off">
         <div class="input-group">
