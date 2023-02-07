@@ -10,6 +10,7 @@
     "use strict";
 
     const storedTheme = localStorage.getItem("theme");
+        const colorTogglerLabel = document.querySelector("#color-mode-label");
 
     const getPreferredTheme = () => {
         if (storedTheme) {
@@ -27,8 +28,10 @@
             window.matchMedia("(prefers-color-scheme: light)").matches
         ) {
             document.documentElement.setAttribute("data-bs-theme", "light");
+                colorTogglerLabel.textContent = "Light Mode";
         } else {
             document.documentElement.setAttribute("data-bs-theme", "dark");
+                colorTogglerLabel.textContent = " Dark Mode";
         }
     };
 

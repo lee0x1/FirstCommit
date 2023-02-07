@@ -1,7 +1,6 @@
 // application.mjs
 
 class Application {
-    history = [];
 
     constructor(inputService, dataService, displayService, utilityService) {
         this.inputService = inputService;
