@@ -8,7 +8,7 @@
     "prestart": "npm run clean",
     "start": "parcel src/index.html",
     "prebuild": "npm run clean",
-    "build": "parcel build --public-url ./ src/index.html",
+    "build": "parcel build ./src/index.html",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --verbose",
     "test::watch": "npm test -- --watch",
     "test::cov": "npm test -- --coverage"
