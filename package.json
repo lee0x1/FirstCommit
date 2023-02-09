@@ -4,7 +4,10 @@
   "description": "View Github users first commit",
   "type": "module",
   "scripts": {
-    "dev": "parcel src/index.html",
+    "clean": "npx rimraf dist .parcel-cache",
+    "prestart": "npm run clean",
+    "start": "parcel src/index.html",
+    "prebuild": "npm run clean",
     "build": "parcel build --public-url ./ src/index.html",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --verbose",
     "test::watch": "npm test -- --watch",
