@@ -11,12 +11,13 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
-      - name: Install and Build 🔧
+      - name: Install, Test and Build 🔧
         uses: actions/setup-node@v3
         with:
           node-version: 18.13.0
       - run: |
           npm ci
+          npm test
           npm run build
 
       - name: Deploy 🚀
