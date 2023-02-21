@@ -16,9 +16,10 @@ class Application {
             try {
                 const username = this.utilityService.constructUrl(input);
                 const data = await this.dataService.getData(fetch, username);
+                const userNotFound = data.items === undefined || data.items.length === 0;
 
                 // check if user exists
-                if (data.items === undefined || data.items.length === 0) {
+                if (userNotFound) {
                     // user not found
 
                     // remove 404 page
