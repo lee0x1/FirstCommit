@@ -2,20 +2,20 @@
 
 class Application {
 
-    constructor(inputService, dataService, displayService, utilityService) {
-        this.inputService = inputService;
-        this.dataService = dataService;
-        this.displayService = displayService;
-        this.utilityService = utilityService;
+    constructor(input, data, display, utils) {
+        this.input = input;
+        this.data = data;
+        this.display = display;
+        this.utils = utils;
         // TODO: add better logging
         console.info(`app::running`);
     }
 
     run() {
-        this.inputService.mainHandler(async (input) => {
+        this.input.mainHandler(async (input) => {
             try {
-                const username = this.utilityService.constructUrl(input);
-                const data = await this.dataService.getData(fetch, username);
+                const username = this.utils.constructUrl(input);
+                const data = await this.data.getData(fetch, username);
                 const userNotFound = data.items === undefined || data.items.length === 0;
 
                 // check if user exists
@@ -23,25 +23,25 @@ class Application {
                     // user not found
 
                     // remove 404 page
-                    this.displayService.removeElement(
-                        this.displayService.elementList.notFound
+                    this.display.removeElement(
+                        this.display.elementList.notFound
                     );
 
                     // remove welcome page
-                    this.displayService.removeElement(
-                        this.displayService.elementList.jumbotron
+                    this.display.removeElement(
+                        this.display.elementList.jumbotron
                     );
 
                     // remove card
-                    this.displayService.removeElement(
-                        this.displayService.elementList.card
+                    this.display.removeElement(
+                        this.display.elementList.card
                     );
 
                     // render 404 page
-                    this.displayService.renderTemplate(
-                        this.displayService.elementList.container404,
-                        this.displayService.elementList.template404,
-                        this.displayService.elementList.container
+                    this.display.renderTemplate(
+                        this.display.elementList.container404,
+                        this.display.elementList.template404,
+                        this.display.elementList.container
                     );
 
                     throw new Error(`username not found!`);
@@ -49,24 +49,24 @@ class Application {
                     // user exists
 
                     // remove welcome page
-                    this.displayService.removeElement(
-                        this.displayService.elementList.jumbotron
+                    this.display.removeElement(
+                        this.display.elementList.jumbotron
                     );
 
                     // remove 404 page
-                    this.displayService.removeElement(
-                        this.displayService.elementList.notFound
+                    this.display.removeElement(
+                        this.display.elementList.notFound
                     );
 
                     // render card
-                    this.displayService.renderTemplate(
-                        this.displayService.elementList.card,
-                        this.displayService.elementList.cardTemplate,
-                        this.displayService.elementList.container
+                    this.display.renderTemplate(
+                        this.display.elementList.card,
+                        this.display.elementList.cardTemplate,
+                        this.display.elementList.container
                     );
 
                     // poplulate template with data
-                    this.displayService.renderData(data);
+                    this.display.renderData(data);
 
                     // TODO: add better logging
                     console.info(data.items[0]);
