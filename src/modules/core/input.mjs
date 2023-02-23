@@ -1,4 +1,4 @@
-// inputService.mjs
+// input.mjs
 
 const mainHandler = (callback) => {
     const usernameInput = document.querySelector("#username-input");
@@ -55,6 +55,6 @@ const submitForm = ([input, form], callback) => {
     });
 };
 
-export const InputService = {
+export const Input = {
     mainHandler: mainHandler,
 };

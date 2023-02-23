@@ -1,4 +1,4 @@
-// displayService.mjs
+// display.mjs
 
 const elementList = {
     jumbotron: ".jumbotron", // begin template elements
@@ -100,7 +100,7 @@ const convertDate = (utcDate) => {
     return date.toLocaleDateString();
 };
 
-export const DisplayService = {
+export const Display = {
     renderTemplate: renderTemplate,
     renderData: renderData,
     removeElement: removeElement,

@@ -1,4 +1,4 @@
-// dataService.mjs
+// data.mjs
 
 const getData = async (provider, url) => {
     try {
@@ -10,6 +10,6 @@ const getData = async (provider, url) => {
     }
 };
 
-export const DataService = {
+export const Data = {
     getData: getData,
 };

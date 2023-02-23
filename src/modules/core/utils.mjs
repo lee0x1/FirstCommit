@@ -1,4 +1,4 @@
-// utilityService.mjs
+// utils.mjs
 
 const constructUrl = (username) => {
     const base = `https://api.github.com/search/commits`;
@@ -9,6 +9,6 @@ const constructUrl = (username) => {
     return url;
 };
 
-export const UtilityService = {
+export const Utils = {
     constructUrl: constructUrl,
 };
