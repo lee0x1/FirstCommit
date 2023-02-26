@@ -9,10 +9,5 @@ import { Application } from "./modules/application.mjs";
 
 // run app
 (() => {
-    new Application(
-        Input,
-        Data,
-        Display,
-        Utils
-    ).run();
+    new Application(Input, Data, Display, Utils).run();
 })();
