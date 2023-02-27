@@ -1,6 +1,6 @@
 // src/utils/currency.test.js
-import { DataService } from "../../src/modules/core/dataService.mjs";
-import { expect, jest, test } from "@jest/globals";
+import { Data } from "../../src/modules/core/data.mjs";
+import { expect, jest } from "@jest/globals";
 
 global.fetch = jest.fn(() =>
     Promise.resolve({
@@ -18,7 +18,7 @@ beforeEach(() => {
 });
 
 it("fetches users commits", async () => {
-    const data = await DataService.getData(fetch, url);
+    const data = await Data.getData(fetch, url);
 
     expect(data).toEqual({ items: {} });
     expect(fetch).toHaveBeenCalledTimes(1);
@@ -27,7 +27,7 @@ it("fetches users commits", async () => {
 it("returns error message when exception", async () => {
     fetch.mockImplementationOnce(() => Promise.reject("Error fetching data"));
 
-    const data = await DataService.getData(fetch, url);
+    const data = await Data.getData(fetch, url);
 
     expect(data).toEqual(`Error fetching data`);
     expect(fetch).toHaveBeenCalledWith(url);

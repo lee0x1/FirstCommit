@@ -1,6 +1,6 @@
 // utilityService.test.mjs
 
-import { UtilityService } from "../../src/modules/core/utilityService.mjs";
+import { Utils } from "../../src/modules/core/utils.mjs";
 
 test("constructUrl() takes string and returns valid url", () => {
     let username = `lee0x1`;
@@ -8,5 +8,5 @@ test("constructUrl() takes string and returns valid url", () => {
 ?q=author:lee0x1&order=asc\
 &sort=committer-date`;
 
-    expect(UtilityService.constructUrl(username)).toBe(url);
+    expect(Utils.constructUrl(username)).toBe(url);
 });
