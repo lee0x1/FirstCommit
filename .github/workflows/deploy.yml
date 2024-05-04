@@ -23,6 +23,8 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
+          git-config-name: "Lee Howard"
+          git-config-email: leegibsonhoward@gmail.com 
           folder: dist
           clean: true
           clean-exclude: |
