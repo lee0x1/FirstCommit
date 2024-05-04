@@ -12,3 +12,7 @@
 [data-bs-theme=dark] svg {
     fill: #f8f9fa;
 }
+
+.btn {
+    vertical-align: baseline;
+}

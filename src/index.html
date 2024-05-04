@@ -35,7 +35,7 @@
   </head>
   <body>
     <div id="container" class="container-fluid max-width">
-      <nav class="navbar mb-2">
+      <nav class="navbar pb-0">
         <a class="navbar-brand" href="https://lee0x1.github.io/fc/">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -134,34 +134,35 @@
         </ul>
         
       </nav>
-      <form id="submit-form" autocomplete="off">
-        <div class="input-group">
-          <span class="input-group-text">@</span>
-          <input
-            id="username-input"
-            type="search"
-            class="form-control shadow-none"
-            placeholder="Username"
-            aria-label="Username"
-            aria-describedby="basic-addon1"
-            required
-            minlength="1"
-            maxlength="38"
-          />
-          <button id="searchBtn" class="btn btn-secondary" type="submit">
-            Search
-          </button>
-        </div>
-      </form>
 
-      <div class="jumbotron mt-4">
+      <div class="jumbotron">
         <h1 class="display-1">Hello, world! 👋🏽</h1>
         <p class="lead">
             Look up any <a href="https://github.com" target="_blank">Github</a>
             users very first commit.
         </p>
-        <hr class="my-4" />
-        <p>
+
+        <form id="submit-form" autocomplete="off">
+            <div class="input-group">
+              <span class="input-group-text">@</span>
+              <input
+                id="username-input"
+                type="search"
+                class="form-control shadow-none"
+                placeholder="Username"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+                required
+                minlength="1"
+                maxlength="38"
+              />
+              <button id="searchBtn" class="btn btn-secondary" type="submit">
+                Search
+              </button>
+            </div>
+        </form>
+          
+        <p class="py-4 my-0">
           This is possible by leveraging the
           <a href="https://docs.github.com/en/rest" target="_blank">GitHub REST API</a>
           to retrive a list of a users commits and filter through to the
@@ -174,7 +175,7 @@
             role="button"
             target="_blank"
             >Visit Github</a
-          > to learn more!
+          ><span class="px-2">to learn more!</span>
         </p>
       </div>
     </div>
