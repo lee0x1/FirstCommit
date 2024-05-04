@@ -2,6 +2,7 @@
 
 const elementList = {
     jumbotron: ".jumbotron", // begin template elements
+    additionalInfo: "#additional-info",
     cardContainer: ".row",
     notFound: "#container404",
     template404: "#page404",

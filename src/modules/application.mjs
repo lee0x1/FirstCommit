@@ -57,6 +57,9 @@ class Application {
                     this.display.removeElement(
                         this.display.elementList.notFound
                     );
+                    this.display.removeElement(
+                        this.display.elementList.additionalInfo
+                    );
 
                     // render card
                     this.display.renderTemplate(
