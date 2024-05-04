@@ -22,18 +22,13 @@ class Application {
                 if (userNotFound) {
                     // user not found
 
-                    // remove 404 page
-                    this.display.removeElement(
-                        this.display.elementList.notFound
-                    );
-
-                    // remove welcome page
-                    this.display.removeElement(
-                        this.display.elementList.jumbotron
-                    );
-
-                    // remove card
-                    this.display.removeElement(
+                    // remove uneeded elements
+                    this.display.removeElements(
+                        // remove 404 page
+                        this.display.elementList.notFound,
+                        // remove welcome page
+                        this.display.elementList.jumbotron,
+                        // remove card
                         this.display.elementList.card
                     );
 
@@ -43,21 +38,18 @@ class Application {
                         this.display.elementList.template404,
                         this.display.elementList.container
                     );
-
+                  
                     throw new Error(`username not found!`);
                 } else {
-                    // user exists
+                    // user found
 
-                    // remove welcome page
-                    this.display.removeElement(
-                        this.display.elementList.jumbotron
-                    );
-
-                    // remove 404 page
-                    this.display.removeElement(
-                        this.display.elementList.notFound
-                    );
-                    this.display.removeElement(
+                    // remove uneeded elements
+                    this.display.removeElements(
+                        // remove welcome page
+                        this.display.elementList.jumbotron,
+                        // remove 404 page
+                        this.display.elementList.notFound,
+                        // remove text and button from page bottom
                         this.display.elementList.additionalInfo
                     );
 

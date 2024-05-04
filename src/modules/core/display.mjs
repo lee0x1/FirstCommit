@@ -20,10 +20,13 @@ const elementList = {
     repoUrl: "#repourl",
 };
 
-const removeElement = function (selector) {
-    const element = document.querySelector(selector);
-    if (element) {
-        element.remove();
+const removeElements = function (...selector) {
+    for ( let i = 0; i < selector.length; i++)
+    {
+        const element = document.querySelector(selector[i]);
+        if (element) {
+            element.remove();
+        }
     }
 };
 
@@ -104,6 +107,6 @@ const convertDate = (utcDate) => {
 export const Display = {
     renderTemplate: renderTemplate,
     renderData: renderData,
-    removeElement: removeElement,
+    removeElements: removeElements,
     elementList: elementList,
 };
