@@ -29,7 +29,9 @@ class Application {
                         // remove welcome page
                         this.display.elementList.jumbotron,
                         // remove card
-                        this.display.elementList.card
+                        this.display.elementList.card,
+                        // remove text and button from page bottom
+                        this.display.elementList.additionalInfo
                     );
 
                     // render 404 page
